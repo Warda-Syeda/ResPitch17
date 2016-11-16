@@ -34,6 +34,9 @@ switch imgName
         set(gca, 'xlim',[0 40]);
         set(gca, 'ylim',[0,130]);
         
+        disp('Your data is now in your current folder!')
+        save('Batman_data','x_O','y_O','x_L','y_L','x_data','y_data');
+        
     case 'taxi.jpg'
         im = imread(imgName);
         figure; imagesc(im); axis off
@@ -61,6 +64,9 @@ switch imgName
         set(gca, 'xlim',[0 400]);
         set(gca, 'ylim',[-6,6]);
         
+        disp('Your data is now in your current folder!')
+        save('Taxi_data','x_O','y_O','x_L','y_L','x_data','y_data');
+        
     case 'Japan.jpg'
         im = imread(imgName);
         figure; imagesc(im); axis off
@@ -80,6 +86,9 @@ switch imgName
         
         set(gca, 'xlim',[1 6]);
         set(gca, 'ylim',[-4,10]);
+        
+        disp('Your data is now in your current folder!')
+        save('Japan_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'Pigeons.jpg'
         im = imread(imgName);
@@ -102,5 +111,8 @@ switch imgName
         
         set(gca, 'xlim',[0 5]);
         set(gca, 'ylim',[0,0.5]);
+        
+        disp('Your data is now in your current folder!')
+        save('Pigeons_data','x_O','y_O','x_L','y_L','x_data','y_data');
  
 end
