@@ -16,6 +16,10 @@ switch imgName
         
         figure; plot(x_data,y_data)
         
+        xlabel('Velocity profile of Batman glide')
+        ylabel ('Velocity')
+        title ('Trajectory of a falling Batman')
+        
         set(gca, 'xlim',[0 40]);
         set(gca, 'ylim',[0,130]);
         
@@ -37,6 +41,12 @@ switch imgName
         y_data = (y(4:end)-y_O) * (6-(-6))./(y_L - y_O) + (-6);
         
         figure; scatter(x_data,y_data)
+        
+        xlabel('Time as taxi driver')
+        ylabel ('Size of Hippocampus')
+        title ('Taxi drivers have more developed brains than the rest of the world!')
+
+        
         set(gca, 'xlim',[0 400]);
         set(gca, 'ylim',[-6,6]);
         
@@ -52,6 +62,11 @@ switch imgName
         y_data = (y(2:end)-min(y(:))) * (10-(-4))./(max(y(:)) - min(y(:))) + (-4);
         
         figure; scatter(x_data,y_data)
+        
+        xlabel('Unemployment Rate')
+        ylabel ('Inflation Rate')
+        title ('Japan Phillips curve looks like Japan')
+        
         set(gca, 'xlim',[1 6]);
         set(gca, 'ylim',[-4,10]);
         
@@ -68,6 +83,12 @@ switch imgName
         y_data = (y(4:end)-y_O) * (0.5-0)./(y_L - y_O) + 0;
         
         figure; plot(x_data,y_data,'o')
+        
+        xlabel('Painting number')
+        ylabel ('Relative response')
+        title ('Pigeons can discriminate bw good and bad paintings')
+        
+        
         set(gca, 'xlim',[0 5]);
         set(gca, 'ylim',[0,0.5]);
  
