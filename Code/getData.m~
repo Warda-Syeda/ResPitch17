@@ -113,7 +113,7 @@ switch imgName
         set(gca, 'ylim',[0,0.5]);
         
         disp('Your data is now in your current folder!')
-        disp('HINT: You can find the original paper in your current folder too!')
+        disp('You can find')
         save('Pigeons_data','x_O','y_O','x_L','y_L','x_data','y_data');
  
 end
