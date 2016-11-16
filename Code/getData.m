@@ -35,6 +35,7 @@ switch imgName
         set(gca, 'ylim',[0,130]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Batman_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'taxi.jpg'
@@ -65,6 +66,7 @@ switch imgName
         set(gca, 'ylim',[-6,6]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Taxi_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'Japan.jpg'
@@ -88,6 +90,7 @@ switch imgName
         set(gca, 'ylim',[-4,10]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Japan_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'Pigeons.jpg'
