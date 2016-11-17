@@ -30,6 +30,8 @@ switch imgName
         hold on
         plot(my_x_data,my_y_data,'r')
         
+        legend('Govt data', 'My data')
+        
         % Labelling data plot
         xlabel('Velocity profile of Batman glide')
         ylabel ('Velocity')
