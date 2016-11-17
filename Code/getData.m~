@@ -35,6 +35,7 @@ switch imgName
         set(gca, 'ylim',[0,130]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Batman_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'taxi.jpg'
@@ -54,7 +55,12 @@ switch imgName
         x_data = (x(4:end)-x_O) * (400-0)./(x_L - x_O) + 0;
         y_data = (y(4:end)-y_O) * (6-(-6))./(y_L - y_O) + (-6);
         
-        figure; scatter(x_data,y_data)
+   
+        
+        figure; plot(x_data,y_data); 
+        hold on
+        plot(my_x_data,my_y_data)
+        
         
         xlabel('Time as taxi driver')
         ylabel ('Size of Hippocampus')
@@ -65,18 +71,24 @@ switch imgName
         set(gca, 'ylim',[-6,6]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Taxi_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'Japan.jpg'
+    
         im = imread(imgName);
         figure; imagesc(im); axis off
         
         [x,y] = getpts(gcf); y = -y;
         
         x_O = x(1); y_O = y(1);
+        x_L = x(2); y_L = y(3);
         
-        x_data = (x(2:end)-min(x(:))) * (6-1)./(max(x(:)) - min(x(:))) + 1;
-        y_data = (y(2:end)-min(y(:))) * (10-(-4))./(max(y(:)) - min(y(:))) + (-4);
+        x_data = (x(4:end)-x_O) * (6-1)./(x_L - x_O) + 1;
+        y_data = (y(4:end)-y_O) * (10-(-4))./(y_L - y_O) + (-4);
+        
+        my_x_data = [4.47000000000000;4.73000000000000;4.60000000000000;4.73000000000000;4.64000000000000;4.56000000000000;4.45000000000000;4.47000000000000;4.58000000000000;4.68000000000000;4.59000000000000;4.59000000000000;4.73000000000000;4.80000000000000;4.90000000000000;4.78000000000000;4.81000000000000;4.95000000000000;4.90000000000000;4.90000000000000;4.90000000000000;4.95000000000000;5;5.04000000000000;4.91000000000000;4.91000000000000;5.02000000000000;5.08000000000000;4.50000000000000;4.34000000000000;4.50000000000000;4.46000000000000;4.38000000000000;4.38000000000000;4.48000000000000;4.48000000000000;4.48000000000000;4.39000000000000;4.26000000000000;4.37000000000000;4.39000000000000;4.56000000000000;4.69000000000000;4.52000000000000;4.52000000000000;4.34000000000000;4.35000000000000;4.50000000000000;4.51000000000000;4.47000000000000;4.72000000000000;4.89000000000000;5.07000000000000;5.07000000000000;5.04000000000000;4.95000000000000]
+        my_y_data = [6.58000000000000;6.71000000000000;6.71000000000000;6.67000000000000;6.40000000000000;6.40000000000000;5.86000000000000;6.22000000000000;6.22000000000000;6.08000000000000;5.99000000000000;5.81000000000000;6.13000000000000;6.76000000000000;5.90000000000000;6.53000000000000;6.04000000000000;6.04000000000000;6.26000000000000;6.40000000000000;6.76000000000000;6.80000000000000;7.03000000000000;7.12000000000000;6.04000000000000;5.50000000000000;6.13000000000000;5.81000000000000;5.90000000000000;5.59000000000000;6.17000000000000;6.67000000000000;6.71000000000000;6.98000000000000;6.98000000000000;6.80000000000000;7.12000000000000;7.12000000000000;6.98000000000000;6.80000000000000;6.62000000000000;6.26000000000000;6.35000000000000;5.68000000000000;5.50000000000000;7.30000000000000;7.12000000000000;7.25000000000000;7.30000000000000;6.44000000000000;6.49000000000000;6.31000000000000;7.07000000000000;7.48000000000000;7.61000000000000;7.79000000000000];
         
         figure; scatter(x_data,y_data)
         
@@ -88,6 +100,7 @@ switch imgName
         set(gca, 'ylim',[-4,10]);
         
         disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Japan_data','x_O','y_O','x_L','y_L','x_data','y_data');
         
     case 'Pigeons.jpg'
@@ -102,7 +115,14 @@ switch imgName
         x_data = (x(4:end)-x_O) * (5-0)./(x_L - x_O) + 0;
         y_data = (y(4:end)-y_O) * (0.5-0)./(y_L - y_O) + 0;
         
-        figure; plot(x_data,y_data,'o')
+        my_x_data = [0.50;1.71;2.79;3.91;5.05];
+        my_y_data = [0.08;0.09;0.17;0.29;0.34];
+        
+        figure; plot(x_data,y_data)
+        hold on
+        plot(my_x_data, my_y_data)
+        
+        legend('Govt data', 'My data')
         
         xlabel('Painting number')
         ylabel ('Relative response')
@@ -113,7 +133,7 @@ switch imgName
         set(gca, 'ylim',[0,0.5]);
         
         disp('Your data is now in your current folder!')
-        disp('You can find')
+        disp('HINT: You can find the original paper in your current folder too!')
         save('Pigeons_data','x_O','y_O','x_L','y_L','x_data','y_data');
  
 end
