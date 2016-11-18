@@ -43,7 +43,7 @@ switch imgName
         
         disp('Your data is now in your current folder!')
         disp('HINT: You can find the original paper in your current folder too!')
-        save('Batman_data','x_O','y_O','x_L','y_L','x_data','y_data');
+        save('Batman_data','x_data','y_data');
         
     case 'taxi.jpg'
         im = imread(imgName);
@@ -81,7 +81,7 @@ switch imgName
         
         disp('Your data is now in your current folder!')
         disp('HINT: You can find the original paper in your current folder too!')
-        save('Taxi_data','x_O','y_O','x_L','y_L','x_data','y_data');
+        save('Taxi_data','x_data','y_data');
         
     case 'Japan.jpg'
     
@@ -114,7 +114,7 @@ switch imgName
         
         disp('Your data is now in your current folder!')
         disp('HINT: You can find the original paper in your current folder too!')
-        save('Japan_data','x_O','y_O','x_L','y_L','x_data','y_data');
+        save('Japan_data','x_data','y_data');
         
     case 'Pigeons.jpg'
         im = imread(imgName);
@@ -147,6 +147,34 @@ switch imgName
         
         disp('Your data is now in your current folder!')
         disp('HINT: You can find the original paper in your current folder too!')
-        save('Pigeons_data','x_O','y_O','x_L','y_L','x_data','y_data');
- 
+        save('Pigeons_data','x_data','y_data');
+    case 'demo.jpg'
+        
+        im = imread(imgName);
+        figure; imagesc(im); axis off
+        
+        [x,y] = getpts(gcf); y = -y;
+        
+        x_O = x(1); y_O = y(1);
+        x_L = x(2); y_L = y(3);
+        
+        x_data = (x(4:end)-x_O) * (120-0)./(x_L - x_O) + 0;
+        y_data = (y(4:end)-y_O) * (0.9-0)./(y_L - y_O) + 0;
+        
+        figure; scatter(x_data,y_data)
+        
+        legend('My data')
+        
+        set(gca, 'xlim',[0 120]);
+        set(gca, 'ylim',[0,0.9]);
+        
+        xlabel('Number of days of your belief')
+        ylabel ('Probability of alien abduction')
+        title ('Was I abducted by Aliens?')
+        
+        disp('Your data is now in your current folder!')
+        disp('HINT: You can find the original paper in your current folder too!')
+        save('demo_data','x_data','y_data');
+
+        
 end
